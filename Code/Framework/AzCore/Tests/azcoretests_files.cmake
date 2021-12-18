@@ -69,9 +69,9 @@ set(FILES
     TickBusTest.cpp
     UUIDTests.cpp
     XML.cpp
-    Debug/AssetTracking.cpp
     Debug/LocalFileEventLoggerTests.cpp
     Debug/Trace.cpp
+    Debug/UnhandledExceptions.cpp
     Name/NameJsonSerializerTests.cpp
     Name/NameTests.cpp
     RTTI/TypeSafeIntegralTests.cpp
@@ -120,6 +120,7 @@ set(FILES
     Serialization/Json/TestCases_Classes.cpp
     Serialization/Json/TestCases_Compare.cpp
     Serialization/Json/TestCases_Enum.cpp
+    Serialization/Json/TestCases_Importing.cpp
     Serialization/Json/TestCases_Patching.cpp
     Serialization/Json/TestCases_Pointers.h
     Serialization/Json/TestCases_Pointers.cpp
@@ -211,6 +212,8 @@ set(FILES
     AZStd/Variant.cpp
     AZStd/VariantSerialization.cpp
     AZStd/VectorAndArray.cpp
+    DOM/DomJsonTests.cpp
+    DOM/DomJsonBenchmarks.cpp
 )
 
 # Prevent the following files from being grouped in UNITY builds

@@ -538,6 +538,7 @@ void LevelEditorMenuHandler::PopulateEditMenu(ActionManager::MenuWrapper& editMe
     auto snapMenu = modifyMenu.AddMenu(tr("Snap"));
 
     snapMenu.AddAction(AzToolsFramework::SnapAngle);
+    snapMenu.AddAction(AzToolsFramework::SnapToGrid);
 
     auto transformModeMenu = modifyMenu.AddMenu(tr("Transform Mode"));
     transformModeMenu.AddAction(AzToolsFramework::EditModeMove);
@@ -723,7 +724,8 @@ QMenu* LevelEditorMenuHandler::CreateViewMenu()
     // MISSING AVIRECORDER
 
     viewportViewsMenuWrapper.AddSeparator();
-    viewportViewsMenuWrapper.AddAction(ID_DISPLAY_SHOWHELPERS);
+    viewportViewsMenuWrapper.AddAction(AzToolsFramework::Helpers);
+    viewportViewsMenuWrapper.AddAction(AzToolsFramework::Icons);
 
     // Refresh Style
     viewMenu.AddAction(ID_SKINS_REFRESH);
@@ -832,7 +834,7 @@ QAction* LevelEditorMenuHandler::CreateViewPaneAction(const QtViewPane* view)
 
         if (view->m_options.showOnToolsToolbar)
         {
-            action->setIcon(QIcon(view->m_options.toolbarIcon));
+            action->setIcon(QIcon(view->m_options.toolbarIcon.c_str()));
         }
 
         m_actionManager->AddAction(view->m_id, action);
